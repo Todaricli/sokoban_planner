@@ -39,12 +39,12 @@
     )
     (:action pushBoxUp
         :parameters (?x ?y ?xBoxMinus1 ?xBox)
-        :precondition (and (at ?x ?y) (box ?xBox ?y) (dec ?x ?xBox) (dec ?xBox ?xBoxMinus1) (not (wall ?xBoxMinus1 ?y)) (not (box ?x ?xBoxMinus1)))
+        :precondition (and (at ?x ?y) (box ?xBox ?y) (dec ?x ?xBox) (dec ?xBox ?xBoxMinus1) (not (wall ?xBoxMinus1 ?y)) (not (box ?xBoxMinus1 ?y)))
         :effect (and (not (at ?x ?y)) (at ?xBox ?y) (not (box ?xBox ?y)) (box ?xBoxMinus1 ?y))
     )
     (:action pushBoxDown
         :parameters (?x ?y ?xBoxPlus1 ?xBox)
-        :precondition (and (at ?x ?y) (box ?xBox ?y) (inc ?x ?xBox) (inc ?xBox ?xBoxPlus1) (not (wall ?xBoxPlus1 ?y)) (not (box ?x ?xBoxPlus1)))
+        :precondition (and (at ?x ?y) (box ?xBox ?y) (inc ?x ?xBox) (inc ?xBox ?xBoxPlus1) (not (wall ?xBoxPlus1 ?y)) (not (box ?xBoxPlus1 ?y)))
         :effect (and (not (at ?x ?y)) (at ?xBox ?y) (not (box ?xBox ?y)) (box ?xBoxPlus1 ?y))
     )
 )
